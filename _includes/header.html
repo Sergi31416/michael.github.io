@@ -1,0 +1,27 @@
+<header>
+
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="{{ site.url }}" class="brand-logo">Airplane Modeling</a>
+      
+      <ul class="right hide-on-med-and-down">
+      {% assign pages = site.pages %}
+      {% for my_page in pages %}
+        {% if my_page.title %}
+            <li><a href={{ my_page.url | prepend: site.baseurl }}>{{ my_page.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+      
+      <ul id="nav-mobile" class="side-nav">
+      {% for my_page in pages %}
+        {% if my_page.title %}
+          <li><a href={{ my_page.url | prepend: site.baseurl }}>{{ my_page.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+</header>
